@@ -13,6 +13,7 @@ public class PlatformerGame_Manager : MonoBehaviour, ISaveable
     public static PlatformerGame_Manager instance;
 
     [SerializeField] private List<GameObject> cookies = new List<GameObject>();
+    [SerializeField] private List<GameObject> spikes = new List<GameObject>();
 
     public int cookiesNumber;
 
@@ -82,6 +83,10 @@ public class PlatformerGame_Manager : MonoBehaviour, ISaveable
         foreach (GameObject cookie in cookies)
         {
             cookie.gameObject.SetActive(true);
+        }
+        foreach(GameObject spike in spikes)
+        {
+            spike.gameObject.SetActive(true);
         }
         cookiesNumber = cookies.Count;
     }
